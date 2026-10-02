@@ -1,0 +1,31 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double quiz, lab, project, exam;
+
+    cout << "Enter quiz score: ";
+    cin >> quiz;
+    cout << "Enter laboratory score: ";
+    cin >> lab;
+    cout << "Enter project score: ";
+    cin >> project;
+    cout << "Enter examination score: ";
+    cin >> exam;
+
+    // Weights: quizzes 20%, lab 25%, project 25%, exam 30%
+    double weightedGrade = (quiz * 20 + lab * 25 + project * 25 + exam * 30) / 100.0;
+
+    int roundedGrade   = static_cast<int>(round(weightedGrade));  // nearest whole number
+    int truncatedGrade = (int)weightedGrade;                       // drops the decimal part
+
+    cout << fixed << setprecision(2);
+    cout << "\n===== GRADE SUMMARY =====\n";
+    cout << "Weighted grade: " << weightedGrade << "\n"
+         << "Rounded:        " << roundedGrade << "\n"
+         << "Cast to int:    " << truncatedGrade << endl;
+
+    return 0;
+}
