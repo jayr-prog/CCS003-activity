@@ -1,0 +1,31 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double x1, y1, x2, y2;
+
+    cout << "Enter starting x (x1): ";
+    cin >> x1;
+    cout << "Enter starting y (y1): ";
+    cin >> y1;
+    cout << "Enter target x (x2): ";
+    cin >> x2;
+    cout << "Enter target y (y2): ";
+    cin >> y2;
+
+    double dx = x2 - x1;
+    double dy = y2 - y1;
+    double distance = sqrt(pow(dx, 2) + pow(dy, 2));
+    int roundedDistance = (int)round(distance);
+
+    cout << fixed << setprecision(3);
+    cout << "\n===== DRONE DISTANCE =====\n";
+    cout << "dx:                " << dx << "\n"
+         << "dy:                " << dy << "\n"
+         << "Distance:          " << distance << "\n"
+         << "Rounded distance:  " << roundedDistance << endl;
+
+    return 0;
+}
