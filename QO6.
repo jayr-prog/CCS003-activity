@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    long long bytes;
+
+    cout << "Enter file size in bytes: ";
+    cin >> bytes;
+
+    double kilobytes = bytes / 1024.0;
+    double megabytes = kilobytes / 1024.0;
+    double gigabytes = megabytes / 1024.0;
+    long long wholeMegabytes = (long long)megabytes;   // explicit cast drops the decimals
+
+    cout << fixed;
+    cout << "\n===== STORAGE REPORT =====\n";
+    cout << "Bytes:    " << bytes << "\n";
+    cout << setprecision(2);
+    cout << "KB:       " << kilobytes << "\n"
+         << "MB:       " << megabytes << "\n";
+    cout << setprecision(4);
+    cout << "GB:       " << gigabytes << "\n";
+    cout << "Whole MB: " << wholeMegabytes << endl;
+
+    return 0;
+}
