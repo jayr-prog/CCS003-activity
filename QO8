@@ -1,0 +1,34 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double temp1, temp2, temp3;
+
+    cout << "Enter temperature reading 1: ";
+    cin >> temp1;
+    cout << "Enter temperature reading 2: ";
+    cin >> temp2;
+    cout << "Enter temperature reading 3: ";
+    cin >> temp3;
+
+    double average = (temp1 + temp2 + temp3) / 3.0;
+    double differenceFirstThird = fabs(temp1 - temp3);
+
+    int floorValue = (int)floor(average);
+    int ceilValue  = (int)ceil(average);
+    int truncValue = (int)trunc(average);
+    int roundValue = (int)round(average);
+
+    cout << fixed << setprecision(3);
+    cout << "\n===== SENSOR SUMMARY =====\n";
+    cout << "Average:      " << average << "\n"
+         << "|T1 - T3|:    " << differenceFirstThird << "\n"
+         << "floor:        " << floorValue << "\n"
+         << "ceil:         " << ceilValue << "\n"
+         << "trunc:        " << truncValue << "\n"
+         << "round:        " << roundValue << endl;
+
+    return 0;
+}
